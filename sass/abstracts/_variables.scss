@@ -1,0 +1,46 @@
+// Mixin Prefixes variables
+$prefixes: (webkit, moz, ms, o);
+
+// color valiables
+$color-0: #ffffff;
+$color-1: #14171a;
+$color-2: #101315;
+$color-3: #293138;
+$color-4: #101315;
+$color-5: #ffe07d;
+$color-6: linear-gradient(
+  90deg,
+  rgb(0, 0, 0) 0%,
+  rgb(41, 49, 56) 50%,
+  rgb(0, 0, 0) 100%
+);
+$color-7: #a14539;
+$color-8: #0a5a5a;
+$color-9: #aaa;
+$color-10: #242a2e;
+
+// Sizes
+$size-10-px: 10px;
+$size-20-px: 20px;
+$size-15-px: 15px;
+$size-40-px: 40px;
+$size-45-px: 45px;
+$size-50-px: 50px;
+$size-30-px: 30px;
+$size-100-px: 100px;
+$size-60-px: 60px;
+$size-10-rem: 0.625rem;
+$size-12-rem: 0.8rem;
+$size-13-rem: 0.813rem;
+$size-14-rem: 0.875rem;
+$size-15-rem: 0.938rem;
+$size-15-rem: 0.938rem;
+$size-16-rem: 1rem;
+$size-17-rem: 1.0625rem;
+$size-18-rem: 1.125rem;
+$size-20-rem: 1.25rem;
+$size-25-rem: 1.5625rem;
+$size-23-rem: 1.375rem;
+$size-40-rem: 2.5rem;
+$size-45-rem: 2.8125rem;
+$size-50-rem: 3.125rem;

@@ -1,0 +1,32 @@
+@use "../abstracts/" as *;
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  @include single-min-breakpoints("phone") {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  @include breakpoints("phone") {
+    max-width: 100%;
+  }
+  @include breakpoints("md-phone") {
+    max-width: 720px;
+  }
+  @include breakpoints("tablet") {
+    max-width: 960px;
+  }
+  @include breakpoints("laptop") {
+    max-width: 1140px;
+  }
+  @include breakpoints("desktop") {
+    max-width: 1320px;
+  }
+}
+
+// position: absolute;
+//     left: 50%;
+//     top: 50%;
+//     transform: translate(-50%, -50%);
+//     width: 100%;

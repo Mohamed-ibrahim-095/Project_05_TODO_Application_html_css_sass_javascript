@@ -1,0 +1,19 @@
+@use "../abstracts/" as *;
+
+/* Task container Start */
+
+.task-container {
+  // position: absolute;
+  // left: 0;
+  // right: 0;
+  // top: 50%;
+  padding: $size-40-rem $size-20-rem;
+  // height: 650px;
+  background-color: $color-1;
+  border-radius: 5px;
+  border: 1px solid #242a2e;
+  // @include prefixes(transform, translateY(-50%));
+  box-shadow: 0 0 40px 5px #000;
+}
+
+/* Task container End.. */

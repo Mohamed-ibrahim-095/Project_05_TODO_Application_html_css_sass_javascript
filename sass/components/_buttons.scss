@@ -1,0 +1,21 @@
+@use "../abstracts/" as *;
+
+.main-button {
+  height: $size-45-px;
+  padding: 0 $size-17-rem;
+  cursor: pointer;
+  background-color: $color-8;
+  @include flex-box(
+    $direction: null,
+    $wrap: null,
+    $justify: space-between,
+    $align: center,
+    $gap: 10px
+  );
+  .icon {
+    width: 19px;
+  }
+  span {
+    @include text($color-0, $size-18-rem, capitalize);
+  }
+}

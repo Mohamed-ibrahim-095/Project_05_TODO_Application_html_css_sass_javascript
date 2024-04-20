@@ -1,0 +1,14 @@
+@use "../abstracts/" as *;
+
+.main-input {
+  height: $size-45-px;
+  padding: 0 $size-10-rem;
+  outline: none;
+  @include text($color-0, $size-18-rem);
+}
+
+@mixin placeholder {
+  &::placeholder {
+    @include text($color-9, $size-13-rem, null, 1px);
+  }
+}

@@ -1,0 +1,130 @@
+@use "../abstracts/" as *;
+@use "../components/inputs" as *;
+
+/* User Name Start */
+.task-container {
+  .task-header {
+    @include flex-box(
+      $direction: null,
+      $wrap: wrap,
+      $justify: space-between,
+      $align: center,
+      $gap: null
+    );
+    @include single-max-breakpoints("md-phone") {
+      @include flex-box(
+        $direction: column-reverse,
+        $wrap: null,
+        $justify: null,
+        $align: start,
+        $gap: $size-30-px
+      );
+    }
+    .user-name-box {
+      @include single-max-breakpoints("md-phone") {
+        width: 100%;
+      }
+      .form-box {
+        &.hiddeng {
+          display: none;
+        }
+        @include flex-box(
+          $direction: null,
+          $wrap: wrap,
+          $justify: null,
+          $align: center,
+          $gap: null
+        );
+        .main-input {
+          background-color: #5f6f7a;
+          border: 1px solid $color-8;
+          @include placeholder;
+          @include single-max-breakpoints("md-phone") {
+            flex: 1;
+          }
+        }
+        .main-button {
+          background-color: $color-8;
+          border: 1px solid $color-8;
+        }
+      }
+
+      .message-box {
+        %same-properties {
+          @include text(null, $size-20-rem, capitalize);
+        }
+        &.hiddeng {
+          display: none;
+        }
+        .ms {
+          @extend %same-properties;
+          @include text($color-0);
+          .nameU {
+            @extend %same-properties;
+            @include text($color-5);
+          }
+        }
+      }
+    }
+    .reset-app-box {
+      span {
+        display: block;
+        width: 50px;
+        cursor: pointer;
+        i {
+          @include text($color-8, $size-25-rem);
+          @include prefixes(transition, transform 0.5s linear);
+        }
+        &:hover {
+          i {
+            @include prefixes(transform, rotate(100deg));
+          }
+        }
+      }
+    }
+  }
+  .alert-box {
+    height: 0;
+    margin-top: 30px;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    @include prefixes(
+      transition,
+      (opacity 0.5s linear, visibility 0.5s linear)
+    );
+    &.active {
+      height: auto;
+      visibility: visible;
+      opacity: 1;
+    }
+    .alert {
+      width: fit-content;
+      padding: $size-20-rem;
+      background-color: $color-0;
+      position: relative;
+      @include flex-box(
+        $direction: null,
+        $wrap: null,
+        $justify: null,
+        $align: center,
+        $gap: 15px
+      );
+      .img-box {
+        width: 40px;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 100%;
+        border: {
+          style: solid;
+          color: transparent transparent white transparent;
+          width: 15px;
+        }
+      }
+      border-radius: 5px;
+    }
+  }
+}
+/* User Name End.. */

@@ -1,0 +1,1 @@
+sass --watch C:\Users\Mohamed\Desktop\To-Do-Note\sass\main.scss C:\Users\Mohamed\Desktop\To-Do-Note\css\style.css

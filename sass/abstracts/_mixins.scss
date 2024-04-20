@@ -1,0 +1,125 @@
+@use "./variables" as *;
+
+@mixin prefixes($property, $value) {
+  @each $type in $prefixes {
+    -#{$type}-#{$property}: $value;
+  }
+  #{$property}: $value;
+}
+
+// Create Container
+@mixin single-max-breakpoints($point-name) {
+  @if $point-name == "phone" {
+    // Small devices phones
+    @media (max-width: 575.98px) {
+      @content;
+    }
+  } @else if $point-name == "md-phone" {
+    // Medium devices phone
+    @media (max-width: 767.98px) {
+      @content;
+    }
+  } @else if $point-name == "tablet" {
+    // Medium devices tablets
+    @media (max-width: 991.98px) {
+      @content;
+    }
+  } @else if $point-name == "laptop" {
+    // Large devices desktops
+    @media (max-width: 1199.98px) {
+      @content;
+    }
+  }
+}
+
+@mixin single-min-breakpoints($point-name) {
+  @if $point-name == "phone" {
+    // Small devices phones
+    @media (min-width: 576px) {
+      @content;
+    }
+  } @else if $point-name == "md-phone" {
+    // Medium devices phone
+    @media (min-width: 768px) {
+      @content;
+    }
+  } @else if $point-name == "tablet" {
+    // Medium devices tablets
+    @media (min-width: 992px) {
+      @content;
+    }
+  } @else if $point-name == "laptop" {
+    // Large devices desktops
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+}
+
+@mixin breakpoints($point-name) {
+  @if $point-name == "phone" {
+    // Small devices phones
+    @media (max-width: 575.98px) {
+      @content;
+    }
+  } @else if $point-name == "md-phone" {
+    // Medium devices phone
+    @media (min-width: 576px) and (max-width: 767.98px) {
+      @content;
+    }
+  } @else if $point-name == "tablet" {
+    // Medium devices tablets
+    @media (min-width: 768px) and (max-width: 991.98px) {
+      @content;
+    }
+  } @else if $point-name == "laptop" {
+    // Large devices desktops
+    @media (min-width: 992px) and (max-width: 1199.98px) {
+      @content;
+    }
+  } @else if $point-name == "desktop" {
+    // X-Large devices large desktops
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+}
+
+// Mixin Flex Box
+@mixin flex-box(
+  $direction: null,
+  $wrap: null,
+  $justify: null,
+  $align: null,
+  $gap: null
+) {
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+// text Mixin
+@mixin text($color: null, $size: null, $status: null, $spacing: null) {
+  color: $color;
+  font-size: $size;
+  text-transform: $status;
+  letter-spacing: $spacing;
+}
+
+@mixin scrollbar($target) {
+  #{$target}::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: $color-10;
+  }
+  #{$target}::-webkit-scrollbar {
+    width: 8px;
+    background-color: $color-10;
+  }
+  #{$target}::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    border: 1px solid $color-8;
+  }
+}

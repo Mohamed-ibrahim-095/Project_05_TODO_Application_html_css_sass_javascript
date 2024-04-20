@@ -1,0 +1,30 @@
+@use "../abstracts/" as *;
+
+html {
+  font-family: 100%;
+}
+
+// @include scrollbar(html);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  height: 100vh;
+  background: $color-6;
+  position: relative;
+}
+
+img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+ul {
+  list-style: none;
+}

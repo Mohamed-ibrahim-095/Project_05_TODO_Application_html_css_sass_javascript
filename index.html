@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List - Note</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Task container Start -->
+    <div class="container">
+      <div class="task-container">
+        <!-- Task Header Start -->
+        <div class="task-header">
+          <div class="user-name-box">
+            <!-- Form Box -->
+
+            <div class="form-box">
+              <input
+                type="text"
+                class="main-input"
+                id="user-name"
+                placeholder="user name"
+              />
+              <button class="main-button" id="name-add">
+                <span class="icon"><i class="fa-solid fa-user"></i></span>
+                <span>send</span>
+              </button>
+            </div>
+
+            <!-- Message Box -->
+            <div class="message-box hiddeng">
+              <p class="ms">
+                welcome <span class="nameU">mohamed</span> add new notes
+              </p>
+            </div>
+          </div>
+          <div class="reset-app-box">
+            <span id="reset-app"><i class="fa-solid fa-rotate-right"></i></span>
+          </div>
+        </div>
+        <!-- Alert Box -->
+        <div class="alert-box">
+          <audio class="audio" controls style="display: none">
+            <source src="Sound/error-5-199276.mp3" />
+          </audio>
+          <div class="alert">
+            <div class="img-box"><img src="icon/warning.png" alt="" /></div>
+            <span>please enter your name</span>
+          </div>
+        </div>
+        <!-- Task Header End.. -->
+        <!-- Add Task Input Start -->
+        <div class="add-task-input">
+          <input
+            type="text"
+            class="main-input"
+            id="add-task-input"
+            placeholder="add new task"
+          />
+          <button class="main-button" id="submit-task">
+            <span class="icon"><i class="fa-solid fa-plus"></i></span>
+            <span>new task</span>
+          </button>
+        </div>
+        <!-- Add Task Input End -->
+        <!-- Tasks Start -->
+        <div class="tasks-wallpaper">
+          <div class="tasks-filter-box">
+            <ul class="filter-list">
+              <li class="f-l all-tasks">
+                <span class="list-icon"
+                  ><i class="fa-solid fa-list-check"></i
+                ></span>
+                <span class="list-text">all task</span>
+              </li>
+              <li class="f-l completed-tasks">
+                <span class="list-icon"><i class="fa-solid fa-check"></i></span>
+                <span class="list-text">completed tasks</span>
+              </li>
+              <li class="f-l unfinished-tasks">
+                <span class="list-icon"><i class="fa-solid fa-list"></i></span>
+                <span class="list-text">unfinished tasks</span>
+              </li>
+              <li class="f-l delete-finished-tasks">
+                <span class="list-icon"><i class="fa-solid fa-trash"></i></span>
+                <span class="list-text">delete finished tasks</span>
+              </li>
+              <li class="f-l end-unfinished-tasks">
+                <span class="list-icon"
+                  ><i class="fa-solid fa-check-to-slot"></i
+                ></span>
+                <span class="list-text">end unfinished tasks</span>
+              </li>
+              <li class="f-l delete-all-tasks">
+                <span class="list-icon"
+                  ><i class="fa-solid fa-trash-can"></i
+                ></span>
+                <span class="list-text">delete all tasks</span>
+              </li>
+            </ul>
+          </div>
+          <div class="tasks-content-box">
+            <div class="tasks-counter-side">
+              <span class="counter">0</span>
+            </div>
+            <!-- Task -->
+            <div class="tasks-area">
+              <!--  -->
+
+              <!--  -->
+            </div>
+          </div>
+        </div>
+        <!-- Tasks End.. -->
+      </div>
+    </div>
+    <!-- Task container End -->
+    <script src="js/script.js"></script>
+  </body>
+</html>

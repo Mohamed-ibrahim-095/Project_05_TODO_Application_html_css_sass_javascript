@@ -1,0 +1,232 @@
+@use "../abstracts/" as *;
+
+/* Tasks Start */
+
+@include scrollbar(".tasks-content-box");
+
+.tasks-wallpaper {
+  %border {
+    border: 1px solid #242a2e;
+  }
+  margin: $size-45-px 0;
+  @include flex-box(
+    $direction: null,
+    $wrap: null,
+    $justify: null,
+    $align: start,
+    $gap: 15px
+  );
+  %border-radius {
+    border-radius: 5px;
+  }
+  %padding {
+    padding: $size-15-rem;
+  }
+  %same-properties-icon {
+    width: 30px;
+    height: 30px;
+    font-size: $size-17-rem;
+    @include flex-box(
+      $direction: null,
+      $wrap: null,
+      $justify: center,
+      $align: center,
+      $gap: null
+    );
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  %done {
+    background-color: #2a9b57;
+  }
+  %delete {
+    background-color: #ff5353;
+  }
+  @include single-max-breakpoints("tablet") {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .tasks-filter-box {
+    @extend %padding;
+    @extend %border;
+    @extend %border-radius;
+    .filter-list {
+      @include flex-box(
+        $direction: column,
+        $wrap: wrap,
+        $justify: null,
+        $align: start,
+        $gap: 15px
+      );
+      @include single-max-breakpoints("tablet") {
+        flex-direction: row;
+      }
+      .f-l {
+        width: 100%;
+        padding: $size-10-rem $size-15-rem;
+        cursor: pointer;
+        background-color: $color-2;
+        &:hover {
+          background-color: transparent;
+        }
+        @extend %border-radius;
+        @extend %border;
+        @include flex-box(
+          $direction: null,
+          $wrap: wrap,
+          $justify: null,
+          $align: center,
+          $gap: 15px
+        );
+        @include single-max-breakpoints("tablet") {
+          min-width: 250px;
+          flex: 1;
+        }
+        span {
+          display: block;
+        }
+        .list-icon {
+          @extend %same-properties-icon;
+        }
+        &:first-of-type {
+          .list-icon {
+            background-color: #f06363;
+          }
+        }
+        &:nth-of-type(2) {
+          .list-icon {
+            @extend %done;
+          }
+        }
+        &:nth-of-type(3) {
+          .list-icon {
+            background-color: #6672df;
+          }
+        }
+        &:nth-of-type(4) {
+          .list-icon {
+            background-color: #df9d60;
+          }
+        }
+        &:nth-of-type(5) {
+          .list-icon {
+            background-color: #d45cb3;
+          }
+        }
+        &:nth-of-type(6) {
+          .list-icon {
+            @extend %delete;
+          }
+        }
+        .list-text {
+          @include text($color-0, $size-12-rem, capitalize);
+        }
+      }
+    }
+  }
+  .tasks-content-box {
+    height: 600px;
+    overflow-y: scroll;
+    @extend %border-radius;
+    @extend %border;
+    @extend %padding;
+    flex: 1;
+    // task side
+    .tasks-counter-side {
+      position: relative;
+      height: 35px;
+      .counter {
+        position: absolute;
+        right: 0;
+        display: block;
+        width: 35px;
+        height: 35px;
+        background-color: #222222;
+        border: 1px solid $color-8;
+        text-align: center;
+        line-height: 35px;
+        @include text($color-0);
+        @extend %border-radius;
+      }
+    }
+    // task
+    .tasks-area {
+      margin-top: $size-20-px;
+      @include flex-box(
+        $direction: column,
+        $wrap: wrap,
+        $justify: null,
+        $align: null,
+        $gap: $size-15-px
+      );
+      .task {
+        &.done-task {
+          border: 1px solid #ffff0052;
+          opacity: 0.4;
+          .task-text-box {
+            span {
+              text-decoration: line-through;
+            }
+          }
+        }
+        background-color: $color-10;
+        padding: $size-15-rem $size-12-rem;
+        box-shadow: 0 0 1.5px 1px #000;
+        @include flex-box(
+          $direction: column,
+          $wrap: wrap,
+          $justify: null,
+          $align: null,
+          $gap: $size-15-px
+        );
+        @extend %border-radius;
+        // date box
+        .date-box {
+          @include text(#a5a5a5, $size-12-rem);
+          font-weight: 300;
+        }
+        // task content
+        .task-content {
+          @include flex-box(
+            $direction: null,
+            $wrap: null,
+            $justify: space-between,
+            $align: center,
+            $gap: null
+          );
+          // task-text-box
+          .task-text-box {
+            span {
+              display: block;
+              @include text(#dbd9d9);
+            }
+          }
+          // task control
+          .task-control-box {
+            @include flex-box(
+              $direction: null,
+              $wrap: null,
+              $justify: null,
+              $align: center,
+              $gap: 10px
+            );
+            .done {
+              .list-icon {
+                @extend %same-properties-icon;
+                @extend %done;
+              }
+            }
+            .delete {
+              .list-icon {
+                @extend %same-properties-icon;
+                @extend %delete;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Tasks End.. */
